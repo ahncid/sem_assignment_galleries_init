@@ -27,11 +27,12 @@ for (const gallery of galleries) {
 
    for (const elem of authors) {
 
-    const { author, gallery, images } = elem;
+    const { author, gallery, niceUrl, images } = elem;
    
     let newAuthorModel = { 
         "author" : author, 
-        "gallery" : gallery
+        "gallery" : gallery,
+        "niceUrl" : niceUrl
     }
 
     let createAuthor = simultateWrite ? newAuthorModel : await authorModel.create(newAuthorModel);

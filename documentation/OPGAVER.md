@@ -14,7 +14,7 @@ Dette er en Media College Template og det kan sagtens være at du vil hente fler
 
 Husk derfor **ALTID** at læse **README.md** og **OPGAVER.MD** inden du går igang.
 
-### Opgave: Test data adgang.
+### :dart: Opgave: Test data adgang.
 
 Inden vi starter på at få overblik over projektet, så tester vi adgangen til data.i databasen.
 
@@ -88,7 +88,7 @@ Referencer: https://nextjs.org/docs/getting-started/project-structure
         </body>
     </html>
     ```
-    Det er også her hvor vi lige nu fortælle hele dokumentet at vi benytter *Oswald* fonten.
+    Det er også her, vi lige nu, fortæller hele dokumentet at vi benytter *Oswald* fonten.
 
    *(note: layout filer er meget brugbare i mange situationer - man kan have mange layout filer men kun én ROD layout fil)*
 
@@ -150,15 +150,15 @@ Vi kalder en Mongoose **Model** (*galleryModel*) og benytter en en tom **Query**
 
 Denne Query (forespørgsel) vil aflevere alle gallerier.
 
-### Opgave: Se data
+### :dart: Opgave: Se data
 
-Indsæt en følgende console.log i linie `8` i `boilerbox.js`.
+Indsæt en følgende `console.log` i linie `8` i `boilerbox.js`.
 
 ```javascript
 console.log('Galleries', galleries)
 ```
 
-Hvad hedder de to gallerier der er i data grundlaget og hvor kan man man læse console loggen?.
+:question: Hvad hedder de to gallerier der er i data grundlaget og hvor kan man man læse console loggen?.
 
 Skriv svaret herunder: (åbn i vscode)
 ```
@@ -180,10 +180,118 @@ Heri ligger der selvfølgelig en forventing om at den data ikke ændre sig særl
 
 *(note: cache er den hukommelse, allerede hentet data, befinder sig i - browsere vil forsøge at benytte dette istedet for "hente igen")*.
 
-### Opgave: BoilerBox 'use client'
+### :dart: Opgave: BoilerBox 'use client'
 
 Prøv at indsætte `'use client'` i toppen af `boilerbox.js`.
 
 Nu kan du se at vi får en fejl fra systemet - Man kan *ikke* have en `async` client komponent og derfor kan vi ikke henter data som et server komponent.
 
 Så enten er det et server komponent eller også er det et client komponent.
+
+Lad os prøve at ændre det således at vores data stadig hentes `serverside` men vores `boilerbox` kan været et `client component`. Hvis vores brugere skal klikke på knapper osv - så skal, den del af, komponentet være `client side`. Ikke alle dele af komponentet men "de dele" der skal være *bruger interaktive*.
+
+Åbn `page.js` vores forside som indeholder `<BoilerBox></BoilerBox>`.
+
+Nu lader vi `page.js` hente data.
+
+Åbn `page.js` og indsæt i linie `7` følgende:
+```javascript
+const galleries = await fetchGalleries();
+```
+
+Og husk at lave en reference/import til funktioenen i toppen af dokumentet.
+
+```javascript
+import { fetchGalleries } from '@/lib/data.service'
+```
+
+Nu tilføjer vi `galleries` data´en som en `property` på `<BoilerBox></BoilerBox>`
+
+```javascript
+<BoilerBox galleries={galleries}/>
+```
+
+Åbn `boilerbox.js` og fjern linie `7` -> `const galleries = await fetchGalleries();`
+
+Fjern også `import` -> `import { fetchGalleries } from '@/lib/data.service';`
+
+Tag imod `galleries` som en `property`.
+
+```javascript
+const BoilerBox = ({galleries}) => {
+```
+
+og skriv nu
+```
+`use client`
+```
+
+**Øverst i filen**
+
+boilerbox.js ener med at se således ud.
+
+```javascript
+'use client'
+import Image from 'next/image';
+import styles from './boilerbox.module.css';
+
+const BoilerBox = ({galleries}) => {
+
+    console.log('galleries: ', galleries);
+    return  <div className={styles.boilerbox}>
+    <Image src={'/square_logo.png'} alt="MCDM Logo" width={232} height={195} />
+    <div>
+      <h1>React / NextJS</h1>
+      <p>Medieskolerne Viborg</p>
+      <p>Antal gallerier: {galleries.length}</p>
+    </div>
+  </div>
+
+}
+
+export default BoilerBox;
+```
+
+page.js ender med at se således ud.
+
+```javascript
+import BoilerBox from '@/components/boilerplate/boilerbox'
+import styles from './page.module.css'
+import { fetchGalleries } from '@/lib/data.service'
+
+export default async function Page() {
+
+  const galleries = await fetchGalleries();
+  
+  return (
+    <main className={styles.page} >
+      <BoilerBox galleries={galleries}/>
+    </main>
+  )
+}
+```
+
+:question: Hvor udskriver `console.log`nu voers galleri data? 
+Skriv svaret herunder: (åbn i vscode)
+
+```
+console.log udskrives : (klient eller server).
+```
+
+### Afslutning af 1. del.
+
+Nu har vi været igennem første del af opgaverne.
+
+Del må med denne opgave er:
+
+* Vi lære hvordan vi får startet et Media College Projekt.
+    * Mange projekter vil starte sådan.
+    * En boilerplate er altid rar at have.
+* Vi læser om NextJS fil og folder struktur.
+* Vi lære overordnet om forskellen på `serverside`og `clientside` komponenter.
+
+### Næste skridt.
+
+De resterende opgaver er beskrevet i eksterne dokumenter.
+
+Kontakt :muscle: din underviser.

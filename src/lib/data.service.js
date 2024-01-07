@@ -50,6 +50,11 @@ export const fetchGalleryById = async (name) => {
     }
 };
 
+/*
+
+    Get Gallery for Author by gallery name
+
+*/
 export const fetchAuthorsByGalleryName = async (name) => {
 
     console.log('fetchAuthorsByGalleryName', name)
@@ -69,6 +74,11 @@ export const fetchAuthorsByGalleryName = async (name) => {
 
 };
 
+/*
+
+    Get Author by name
+
+*/
 export const fetchAuthorsByName = async (name) => {
 
     console.log('fetchAuthorsByGalleryName', name)
@@ -87,6 +97,11 @@ export const fetchAuthorsByName = async (name) => {
 
 };
 
+/*
+
+    Get Images for author by author name
+
+*/
 export const fetchImagesForAuthor = async (author) => {
 
     console.log('fetchImagesForAuthor', author)
@@ -106,6 +121,11 @@ export const fetchImagesForAuthor = async (author) => {
 
 };
 
+/*
+
+    Get all images for gallery
+
+*/
 export const fetchImagesForGallery = async (name) => {
 
     console.log('fetchImagesForGallery', name)

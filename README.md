@@ -20,6 +20,9 @@ MONGODB_URI=mongodb://127.0.0.1:27017/sem-galleries
 ```
 *(note: Selve mongo URI´en skulle gerne pege på din local MONGODB installation. Se eventuelt Mongo Compass)*
 
+Lav en kopi af filen og omdøb den til `.env.local` så du ender med at have to filer.
+
+
 Herefter kan du køre kommandoen:
 
 ```bash

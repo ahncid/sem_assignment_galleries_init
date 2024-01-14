@@ -45,4 +45,4 @@ npm run dev
 
 ### 5. Opgaver
 
-Vil være beskrevet i seperate dokumenter i mappen documentation.
+https://github.com/MCDM-Viborg-Documentation/hf-nextjs-sem/tree/main/chapter_01

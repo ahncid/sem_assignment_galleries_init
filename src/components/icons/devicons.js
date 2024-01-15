@@ -1,7 +1,7 @@
 "use client";
-import DevActionBar from "../dev/devActionBar/devActionBar";
+import DevActionBar from "../dev/devactionbar/devactionbar";
 import { useState } from "react";
-import styles from "./icons.module.css";
+import styles from "./devicons.module.css";
 import {
   FaAngleRight,
   FaAngleLeft,
@@ -14,6 +14,10 @@ import {
   FaInfinity,
   FaItunesNote,
 } from "react-icons/fa6";
+
+
+
+
 const DevIcons = () => {
   const [size, setSize] = useState(100);
   let style = { width: `${size}px`, height: `${size}px` };

@@ -17,6 +17,7 @@ const Navigation = () => {
           </Link>
         </div>
         <div>NAVIGATION</div>
+        
         <div>{/* BURGER ICON */}</div>
       </div>
     </div>

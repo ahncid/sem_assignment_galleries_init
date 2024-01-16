@@ -1,24 +1,4 @@
-.container {
-    text-align: center;
-    position: relative;   
-    z-index: 99;
-  }
-  
-  .actionBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-  }
-  
-  .actionBar .btn {
-    padding: 20px;
-    color: var(--main-color);
-    border-radius: 10px;
-    background-color: var(--box-color);
-    cursor: pointer;
-  }
-  .status{
 
+  .status{
     margin-top: 20px;
-}  
+}

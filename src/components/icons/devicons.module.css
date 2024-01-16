@@ -4,7 +4,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 100px auto;
+  margin : 100px auto;
 }
 
 .icons svg {
@@ -15,20 +15,20 @@
 
 .container {
   text-align: center;
-  position: relative;
-  z-index: 99;
+
 }
 
 .actionBar {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
+  margin : 20px auto;
+  
 }
 
-.actionBar .btn {
-  padding: 20px;
-  color: var(--main-color);
+.actionBar .btn{
+  padding : 20px;
+  color : var(--main-color);
   border-radius: 10px;
   background-color: var(--box-color);
   cursor: pointer;

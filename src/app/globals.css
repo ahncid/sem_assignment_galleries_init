@@ -13,12 +13,6 @@
   --navigation-color: rgb(255, 255, 255);
 }
 
-html,
-body {
-  background-color: var(--main-color);
-  height: 100%;
-}
-
 
 @media (prefers-color-scheme: dark) {
 

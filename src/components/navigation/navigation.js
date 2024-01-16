@@ -6,7 +6,9 @@ const Navigation = () => {
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
+     
         <div className={styles.logo}>
+      
           <Link href="/">
             <Image
               src={"/square_logo.png"}
@@ -15,10 +17,12 @@ const Navigation = () => {
               alt={"logo"}
             ></Image>
           </Link>
+          
         </div>
         <div>NAVIGATION</div>
-        
+       
         <div>{/* BURGER ICON */}</div>
+        
       </div>
     </div>
   );

@@ -18,9 +18,10 @@ import {
 
 
 
-const DevIcons = () => {
-  const [size, setSize] = useState(100);
-  let style = { width: `${size}px`, height: `${size}px` };
+const DevIcons = ({initialSize, initialColor}) => {
+  const [size, setSize] = useState(initialSize || 50);
+  const [color, setColor] = useState(initialColor || "#000000");
+  let style = { width: `${size}px`, height: `${size}px`, color: `${color}` };
   let config = {
     small : 50,
     medium : 100,
@@ -29,8 +30,12 @@ const DevIcons = () => {
   return (
     
     <div className={styles.container}>
-         <DevActionBar setSizeFunction={setSize} size={size} config={config}/><span className={styles.btn} >
-    <input type="color" className={styles.color} onChange={(e) => console.log(e.target.value)}></input>
+         <DevActionBar setSizeFunction={setSize} size={size} config={config}/><span className={styles.btn}>
+         <input 
+        type="color" 
+        value={color} 
+        onChange={(e) => setColor(e.target.value)}
+      />
 </span>
       <div className={styles.icons}>
         <FaAngleRight style={style} />

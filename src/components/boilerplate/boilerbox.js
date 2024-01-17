@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import styles from "./boilerbox.module.css";
+import Link from "next/link";
+import DevAssignmentsNavBtn from "../dev/devAssignmentsNavigation/devAssignmentsNavBtn/devAssignmentsNavBtn";
 
 const BoilerBox = ({ galleries }) => {
   console.log("galleries: ", galleries);
@@ -17,6 +19,7 @@ const BoilerBox = ({ galleries }) => {
         <p>Medieskolerne Viborg</p>
         <p>Antal gallerier: {galleries.length}</p>
       </div>
+      
     </div>
   );
 };

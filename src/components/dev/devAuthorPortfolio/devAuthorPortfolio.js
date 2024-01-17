@@ -1,7 +1,7 @@
 import { fetchImagesForAuthor } from '@/lib/data.service';
 import styles from './devAuthorPortfolio.module.css';
 import DevGalleryImage from '../devGalleryImage/devGalleryImage';
-import MagnifyingGlassToggle from '@/components/icons/magnifyingIcon.js';
+
 
 const DevAuthorPortfolio = async ({author}) => {
 

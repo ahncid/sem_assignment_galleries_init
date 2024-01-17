@@ -1,4 +1,4 @@
-import DevDebugJson from '../../devDebugJson/devDebugJson';
+import DevDebugJson from '../devDebugJson/devDebugJson';
 import styles from './devAuthorHero.module.css';
 const DevAuthorHero = ({author}) => {
     return (

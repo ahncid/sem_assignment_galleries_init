@@ -37,3 +37,7 @@ next-env.d.ts
 # Assets
 /public/obscura
 /public/umbra
+
+# Gallery Assets.
+/public/obscura
+/public/umbra

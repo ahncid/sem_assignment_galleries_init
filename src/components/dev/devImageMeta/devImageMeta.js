@@ -3,17 +3,17 @@ import { useState } from 'react';
 import MagnifyingGlassToggle from '@/components/icons/magnifyingIcon';
 import styles from './devImageMeta.module.css';
 
-
 const DevImageMeta = ({ meta }) => {
-    const [showMeta, setShowMeta] = useState(false);
+
+    const [showMeta, setShowMeta] = useState(true);
 
     if (!meta) return <p>No metadata available.</p>;
-
-    const { author, gallery, width, height, Model, path, name, created, Flash, Software } = meta;
 
     const toggleShowMeta = () => {
         setShowMeta(!showMeta);
     };
+
+    const { author, gallery, width, height, Model, path, name, Make, Flash, Software } = meta;
  
     return (
         <div>
@@ -27,7 +27,7 @@ const DevImageMeta = ({ meta }) => {
                     <li>Model: {Model}</li>
                     <li>Path: {path}</li>
                     <li>Name: {name}</li>
-                    <li>Created: {created}</li>
+                    <li>Make: {Make}</li>
                     <li>Flash: {Flash}</li>
                     <li>Software: {Software}</li>
                 </ul>
